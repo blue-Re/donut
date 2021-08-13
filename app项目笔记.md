@@ -262,3 +262,29 @@ require('../socketIo/socket')(server)
 
 在监听事件连接之后，进行数据库的操作
 
+### 6.使用第三方包以表格的形式导出数据库中的内容
+
+```js
+首先需要下载第三方包
+npm install vue-json-excel -S
+```
+
+```js
+接着在main.js中引入并使用
+// 导入表格第三方包，用于生成excel表格
+import JsonExcel from 'vue-json-excel'
+Vue.component('DownloadExcel', JsonExcel)
+```
+
+```js
+之后就是在页面中使用
+<DownloadExcel :data="allUser" header="表格的头部标题" name="好友列表">
+   <van-button round size="small" type="danger">保存用户列表</van-button>
+</DownloadExcel>
+
+属性值：
+data:后台返回的数据
+name:导出表格的名称
+header:导出b
+```
+

@@ -3,6 +3,9 @@
     <van-nav-bar title="好友列表" fixed class="nav"> </van-nav-bar>
     <ul class="userList">
       <van-search v-model="value" placeholder="请输入搜索关键词" />
+      <DownloadExcel :data="allUser" header="表格的头部标题.xls" name="好友列表">
+        <van-button round size="small" type="danger">保存用户列表</van-button>
+      </DownloadExcel>
       <li class="user" v-if="allUser">
         <div
           class="info"

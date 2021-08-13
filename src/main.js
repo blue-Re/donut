@@ -7,6 +7,9 @@ import 'vant/lib/index.css';
 // import 'element-ui/lib/theme-chalk/index.css';
 // 导入socket.io
 import './socketIo/socket'
+// 导入表格第三方包，用于生成excel表格
+import JsonExcel from 'vue-json-excel'
+Vue.component('DownloadExcel', JsonExcel)
 
 Vue.config.productionTip = false
 
